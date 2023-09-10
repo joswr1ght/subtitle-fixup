@@ -82,7 +82,7 @@ if (__name__ == '__main__'):
         print('Automatically generate captions for an audio/video file using assembly.ai')
         print('with match/replace rules.\n')
         print(f'Usage: {os.path.basename(sys.argv[0])} [media file] [fixup rules.csv] (boost words.txt)\n')
-        print('Rules file must consist of matchregex,replacestring,regex flag(s) (no headers).')
+        print('Rules file must consist of match,replace,flags headers followed by rules (flags optional)')
         print('Optional boost words file, one per line.')
         sys.exit(0)
 
