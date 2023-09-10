@@ -1,0 +1,35 @@
+match,replace,flags
+ETH Zero,eth0,0,2
+CTRL Shift T,Ctrl+Shift+T,2
+CTRL C,Ctrl+C,2
+1010 75 One,10.10.75.1,2
+10100 one,10.10.0.1,2
+ping C 3100 One,ping -c 3 10.10.0.1,2
+zero,0,2
+Netstat Nat Grep,netstat -nat | grep,2
+LS L,ls -l,2
+Ntlmv two,NTLMv2,2
+Pseudo,sudo,2
+SEC 504,sec504,2
+hashcap,hashcat,2
+Invay,Inveigh,2
+sick 504,SEC504,2
+opt Responder,/opt/responder
+ opt ,/opt,2
+land ,LAN ,2
+Netstat,netstat,2
+test-netconnection,Test-NetConnection,2
+sudo Responder,sudo responder,0
+Fake Network Services,fake network services,0
+dash little,-,2
+non ,non-,0
+backslash,\,2
+LLM and R,LLMNR,2
+link local multicast name resolution,Link Local Multicast Name Resolution,0
+ cap , cat ,0
+hashcatidentify,hashcat --identify,2
+hashcat a 0 m,hashcat -a 0 -m
+user share wordlists passwords text,/usr/share/wordslists/passwords.txt,2
+user share wordlists,/usr/share/wordlists,2
+passwords text,passwords.txt,2
+user show,--user --show,2
