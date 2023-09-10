@@ -23,24 +23,27 @@ def confirmsub(match, replace, line, count=0, flags=re.NOFLAG):
 
     Returns: line
     """
-    if re.search(match, line, flags):
-        linemod = re.sub(match, replace, line, count, flags)
-        print(f'Applying rule {match} -> {replace} (flag: {flags})')
-        print(f' EXISTING: {line[:-1]}')
-        print(f'SUGGESTED: {linemod[:-1]}')
-        usersel = input("[Yne] ")
-        if usersel.lower().startswith('n'):
-            return line
-        elif usersel.lower().startswith('e'):
-            customline = input('Enter desired line: ')
-            if len(customline) == 0:
-                # User didn't enter a custom line, return the original line
+    try:
+        if re.search(match, line, flags):
+            linemod = re.sub(match, replace, line, count, flags)
+            print(f'Applying rule {match} -> {replace} (flag: {flags})')
+            print(f' EXISTING: {line}')
+            print(f'SUGGESTED: {linemod}')
+            usersel = input('[Yne] ')
+            if usersel.lower().startswith('n'):
                 return line
+            elif usersel.lower().startswith('e'):
+                customline = input('Enter desired line: ')
+                if len(customline) == 0:
+                    # User didn't enter a custom line, return the original line
+                    return line
+                else:
+                    return customline
             else:
-                return customline
-        else:
-            # Default to accept suggested edit
-            return linemod
+                # Default to accept suggested edit
+                return linemod
+    except re.error:
+        sys.stderr.write(f'Regex error in rule {match}; skipping')
     return line
 
 
@@ -96,10 +99,10 @@ if (__name__ == '__main__'):
 
     config = aai.TranscriptionConfig(
             word_boost=boostwords,
-            boost_param="high")
+            boost_param='high')
     transcriber = aai.Transcriber(config=config)
 
-    print("Transcribing.")
+    print('Transcribing.')
     transcript = transcriber.transcribe(sys.argv[1])
     while transcript.status != 'completed':
         print(f'Transcribing, status: {transcript.status}. Please wait.')
@@ -112,7 +115,7 @@ if (__name__ == '__main__'):
     captions = transcript.export_subtitles_srt()
     fixedcaptions = captionfixup(captions.split('\n'))
 
-    print("Writing output original and fixed caption files.")
+    print('Writing output original and fixed caption files.')
     with open(f'{sys.argv[1]}-fixed.srt', 'w') as f:
         f.write('\n'.join(fixedcaptions))
     with open(f'{sys.argv[1]}-orig.srt', 'w') as f:
