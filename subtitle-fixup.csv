@@ -1,13 +1,16 @@
 match,replace,flags
 ETH Zero,eth0,0,2
 CTRL Shift T,Ctrl+Shift+T,2
+Control Shift ,Ctrl+Shift+
 CTRL C,Ctrl+C,2
+CTRL,Ctrl,0
 1010 75 One,10.10.75.1,2
 10100 one,10.10.0.1,2
 ping C 3100 One,ping -c 3 10.10.0.1,2
 zero,0,2
 Netstat Nat Grep,netstat -nat | grep,2
 LS L,ls -l,2
+ LS, ls,0
 Ntlmv two,NTLMv2,2
 Pseudo,sudo,2
 SEC 504,sec504,2
@@ -23,7 +26,6 @@ sudo Responder,sudo responder,0
 Fake Network Services,fake network services,0
 dash little,-,2
 non ,non-,0
-backslash,\,2
 LLM and R,LLMNR,2
 link local multicast name resolution,Link Local Multicast Name Resolution,0
  cap , cat ,0
@@ -33,3 +35,28 @@ user share wordlists passwords text,/usr/share/wordslists/passwords.txt,2
 user share wordlists,/usr/share/wordlists,2
 passwords text,passwords.txt,2
 user show,--user --show,2
+app locker,AppLocker
+App ID SVC,appidsvc,2
+midnight,Midnite,2
+Midnightmeercats.com,midnitemeercats.com,2
+Midnight Mirrorcuts,Midnite Meercats,2
+declare,to clear,0
+ PY,.py,0
+TCP dump,Tcpdump,2
+TCB Dump,Tcpdump,2
+white space,whitespace
+Midnightmeercuts.com,midnitemeercats.com,2
+Falsementis.com,falsimentis.com,2
+false Amendis,Falsimentis,2
+false mentors,Falsimentis,2
+command prompt,Command Prompt,0
+Http,http,0
+AWK,Awk,0
+AUC,Awk,0
+OC,Awk,0
+www one Google Analytics.com,www1-google-analytics.com
+SIM,SIEM,0
+Cybershef,Cyerchef,2
+date D,date -d
+at sign,@
+Falsementis,Falsimentis,2

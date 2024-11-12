@@ -5,3 +5,11 @@ eth
 to
 hashcat
 sudo
+Windows
+AppLocker
+Falsimentis
+access
+http
+epoch
+midnite
+whitespace
